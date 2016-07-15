@@ -1,39 +1,24 @@
 import { Component } from '@angular/core';
 
-export class User {
-  fullname: string;
-  fnumber: string;
-  pass: string;
-}
+// import User
+import { USER } from './user/mock-user';
 
+// Create main App Component
+// Start App 
 @Component({
   selector: 'my-app',
-  template: `
-    <div class="login-page">
-    <div class="form">
-      <img src="images/marvel-logo.svg">
-      <small><label>Login user: </label> <strong></strong>{{user.fnumber}}</small><hr/>
-      <form class="login-form"  (submit)="doLogin($event)">
-        <input [(ngModel)]="user.fnumber" placeholder="F-Number">
-        <input [(ngModel)]="user.pass" placeholder="Password">
-        <button>Login</button>
-      </form>
-      </div>
-    </div>
-    `
+  templateUrl: './app/login/login.views.html'
 })
 
 export class AppComponent {
-  title = 'Marvel App';
+  // Var logo image Dir
+  logoimage = 'images/marvel-logo.svg';
 
-  user: User = {
-    fullname: 'Sechaba Mothobi',
-    fnumber: 'f4856503',
-    pass: 'marvel#8710'
-  };
+  // Retrieve fake user credentials
+  user = USER;
 
   doLogin(event) {
-    alert('log in user F' +  this.user.fnumber + ' password is ' + this.user.pass);
+    alert('log in user (F' +  this.user.fnumber + ') password is (' + this.user.pass + ')');
     event.preventDefault();
   }
 }

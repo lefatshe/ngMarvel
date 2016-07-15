@@ -9,29 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var User = (function () {
-    function User() {
-    }
-    return User;
-}());
-exports.User = User;
+// import User
+var mock_user_1 = require('./user/mock-user');
+// Create main App Component
+// Start App 
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'Marvel App';
-        this.user = {
-            fullname: 'Sechaba Mothobi',
-            fnumber: 'f4856503',
-            pass: 'marvel#8710'
-        };
+        // Var logo image Dir
+        this.logoimage = 'images/marvel-logo.svg';
+        // Retrieve fake user credentials
+        this.user = mock_user_1.USER;
     }
     AppComponent.prototype.doLogin = function (event) {
-        alert('log in user F' + this.user.fnumber + ' password is ' + this.user.pass);
+        alert('log in user (F' + this.user.fnumber + ') password is (' + this.user.pass + ')');
         event.preventDefault();
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <div class=\"login-page\">\n    <div class=\"form\">\n      <img src=\"images/marvel-logo.svg\">\n      <small><label>Login user: </label> <strong></strong>{{user.fnumber}}</small><hr/>\n      <form class=\"login-form\"  (submit)=\"doLogin($event)\">\n        <input [(ngModel)]=\"user.fnumber\" placeholder=\"F-Number\">\n        <input [(ngModel)]=\"user.pass\" placeholder=\"Password\">\n        <button>Login</button>\n      </form>\n      </div>\n    </div>\n    "
+            templateUrl: './app/login/login.views.html'
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

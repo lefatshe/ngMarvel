@@ -1,0 +1,11 @@
+<div class="login-page">
+    <div class="form">
+      <img src="{{logoimage}}">
+      <small><label>Login user: </label> <strong></strong>{{user.fnumber}}</small><hr/>
+      <form class="login-form"  (submit)="doLogin($event)">
+        <input [(ngModel)]="user.fnumber" placeholder="F-Number">
+        <input [(ngModel)]="user.pass" placeholder="Password">
+        <button>Login</button>
+      </form>
+      </div>
+</div>
