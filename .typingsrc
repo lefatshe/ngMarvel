@@ -1,0 +1,4 @@
+{
+   "proxy" : "http://proxyo.fnb.co.za:8080/", // http://46.105.148.146:3128
+   "rejectUnauthorized" : false
+}

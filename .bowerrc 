@@ -1,0 +1,8 @@
+{
+  "proxy" : "http://username:password@160.48.234.129:80",
+  "https-proxy" : "http://username:password@160.48.234.129:80",
+  "directory" : "lib",
+  "json": "bower.json",
+  "searchpath": [
+  ]
+}
